@@ -1,185 +1,177 @@
 use anchor_lang::prelude::*;
+use arcium_anchor::prelude::*;
 
-declare_id!("SPool111111111111111111111111111111111111111");
+// Shadow Pool: encrypted order matching inside Arcium MXE
+const COMP_DEF_OFFSET_MATCH_ORDER: u32 = comp_def_offset("match_order");
 
-/// ShadowPool — Confidential order book execution via Arcium MXE
-///
-/// Orders are submitted encrypted. The Arcium MXE matches orders
-/// without revealing individual order details. Only settlement amounts
-/// are written on-chain after matching.
-#[program]
+declare_id!("9Pwn25dobepgerar43d2GgXuNmKFcYYEoJwMjULwakUG");
+
+#[arcium_program]
 pub mod shadowpool {
     use super::*;
 
-    /// Initialize a trading pair pool
-    pub fn init_pool(
-        ctx: Context<InitPool>,
-        pool_id: u64,
-        base_mint: Pubkey,
-        quote_mint: Pubkey,
-        mxe_cluster_offset: u64,
-    ) -> Result<()> {
-        let pool = &mut ctx.accounts.pool;
-        pool.authority = ctx.accounts.authority.key();
-        pool.pool_id = pool_id;
-        pool.base_mint = base_mint;
-        pool.quote_mint = quote_mint;
-        pool.mxe_cluster_offset = mxe_cluster_offset;
-        pool.active = true;
-        pool.total_orders = 0;
-        pool.total_settlements = 0;
-
-        emit!(PoolInitialized { pool_id, mxe_cluster_offset });
+    pub fn init_match_order_comp_def(ctx: Context<InitMatchOrderCompDef>) -> Result<()> {
+        init_comp_def(ctx.accounts, None, None)?;
         Ok(())
     }
 
-    /// Submit an encrypted limit order.
-    /// Price and size are encrypted — never revealed to the public orderbook.
-    pub fn submit_order(
-        ctx: Context<SubmitOrder>,
-        pool_id: u64,
-        side: OrderSide,
-        encrypted_price: Vec<u8>,
-        encrypted_size: Vec<u8>,
-        order_commitment: [u8; 32],
+    /// Submit encrypted bid and ask for dark pool matching.
+    /// Price and size never visible to the public orderbook.
+    pub fn match_order(
+        ctx: Context<MatchOrder>,
+        computation_offset: u64,
+        encrypted_bid: [u8; 32],
+        encrypted_ask: [u8; 32],
+        pubkey: [u8; 32],
+        nonce: u128,
     ) -> Result<()> {
-        let pool = &mut ctx.accounts.pool;
-        require!(pool.active, ShadowPoolError::PoolNotActive);
-        require!(encrypted_price.len() <= 64, ShadowPoolError::DataTooLarge);
-        require!(encrypted_size.len() <= 64, ShadowPoolError::DataTooLarge);
+        ctx.accounts.sign_pda_account.bump = ctx.bumps.sign_pda_account;
+        let args = ArgBuilder::new()
+            .x25519_pubkey(pubkey)
+            .plaintext_u128(nonce)
+            .encrypted_u8(encrypted_bid)
+            .encrypted_u8(encrypted_ask)
+            .build();
 
-        let order = &mut ctx.accounts.order;
-        order.trader = ctx.accounts.trader.key();
-        order.pool_id = pool_id;
-        order.side = side;
-        order.encrypted_price = encrypted_price;
-        order.encrypted_size = encrypted_size;
-        order.order_commitment = order_commitment;
-        order.status = OrderStatus::Open;
-        order.submitted_at = Clock::get()?.unix_timestamp;
-
-        pool.total_orders += 1;
-
-        emit!(OrderSubmitted {
-            trader: ctx.accounts.trader.key(),
-            pool_id,
-            order_commitment,
-        });
+        queue_computation(
+            ctx.accounts,
+            computation_offset,
+            args,
+            vec![MatchOrderCallback::callback_ix(
+                computation_offset,
+                &ctx.accounts.mxe_account,
+                &[],
+            )?],
+            1,
+            0,
+        )?;
         Ok(())
     }
 
-    /// Record MXE settlement result after confidential matching.
-    pub fn settle_order(
-        ctx: Context<SettleOrder>,
-        fill_price_lamports: u64,
-        fill_size: u64,
-        mxe_proof_hash: [u8; 32],
+    #[arcium_callback(encrypted_ix = "match_order")]
+    pub fn match_order_callback(
+        ctx: Context<MatchOrderCallback>,
+        output: SignedComputationOutputs<MatchOrderOutput>,
     ) -> Result<()> {
-        let order = &mut ctx.accounts.order;
-        order.fill_price_lamports = fill_price_lamports;
-        order.fill_size = fill_size;
-        order.mxe_proof_hash = mxe_proof_hash;
-        order.status = OrderStatus::Filled;
-        order.settled_at = Clock::get()?.unix_timestamp;
+        let o = match output.verify_output(
+            &ctx.accounts.cluster_account,
+            &ctx.accounts.computation_account,
+        ) {
+            Ok(MatchOrderOutput { field_0 }) => field_0,
+            Err(_) => return Err(ErrorCode::AbortedComputation.into()),
+        };
 
-        let pool = &mut ctx.accounts.pool;
-        pool.total_settlements += 1;
-
-        emit!(OrderSettled {
-            trader: order.trader,
-            pool_id: order.pool_id,
-            fill_size,
-            mxe_proof_hash,
+        emit!(OrderMatchedEvent {
+            result: o.ciphertexts[0],
+            nonce: o.nonce.to_le_bytes(),
         });
         Ok(())
     }
 }
 
+#[queue_computation_accounts("match_order", payer)]
 #[derive(Accounts)]
-#[instruction(pool_id: u64)]
-pub struct InitPool<'info> {
-    #[account(init, payer = authority, space = TradingPool::LEN,
-        seeds = [b"pool", &pool_id.to_le_bytes()], bump)]
-    pub pool: Account<'info, TradingPool>,
+#[instruction(computation_offset: u64)]
+pub struct MatchOrder<'info> {
     #[account(mut)]
-    pub authority: Signer<'info>,
+    pub payer: Signer<'info>,
+    #[account(
+        init_if_needed,
+        space = 9,
+        payer = payer,
+        seeds = [&SIGN_PDA_SEED],
+        bump,
+        address = derive_sign_pda!(),
+    )]
+    pub sign_pda_account: Account<'info, ArciumSignerAccount>,
+    #[account(address = derive_mxe_pda!())]
+    pub mxe_account: Account<'info, MXEAccount>,
+    #[account(
+        mut,
+        address = derive_mempool_pda!(mxe_account, ErrorCode::ClusterNotSet)
+    )]
+    /// CHECK: mempool_account, checked by the arcium program.
+    pub mempool_account: UncheckedAccount<'info>,
+    #[account(
+        mut,
+        address = derive_execpool_pda!(mxe_account, ErrorCode::ClusterNotSet)
+    )]
+    /// CHECK: executing_pool, checked by the arcium program.
+    pub executing_pool: UncheckedAccount<'info>,
+    #[account(
+        mut,
+        address = derive_comp_pda!(computation_offset, mxe_account, ErrorCode::ClusterNotSet)
+    )]
+    /// CHECK: computation_account, checked by arcium program.
+    pub computation_account: UncheckedAccount<'info>,
+    #[account(address = derive_comp_def_pda!(COMP_DEF_OFFSET_MATCH_ORDER))]
+    pub comp_def_account: Account<'info, ComputationDefinitionAccount>,
+    #[account(
+        mut,
+        address = derive_cluster_pda!(mxe_account, ErrorCode::ClusterNotSet)
+    )]
+    pub cluster_account: Account<'info, Cluster>,
+    #[account(
+        mut,
+        address = ARCIUM_FEE_POOL_ACCOUNT_ADDRESS,
+    )]
+    pub pool_account: Account<'info, FeePool>,
+    #[account(
+        mut,
+        address = ARCIUM_CLOCK_ACCOUNT_ADDRESS
+    )]
+    pub clock_account: Account<'info, ClockAccount>,
+    pub system_program: Program<'info, System>,
+    pub arcium_program: Program<'info, Arcium>,
+}
+
+#[callback_accounts("match_order")]
+#[derive(Accounts)]
+pub struct MatchOrderCallback<'info> {
+    pub arcium_program: Program<'info, Arcium>,
+    #[account(address = derive_comp_def_pda!(COMP_DEF_OFFSET_MATCH_ORDER))]
+    pub comp_def_account: Account<'info, ComputationDefinitionAccount>,
+    #[account(address = derive_mxe_pda!())]
+    pub mxe_account: Account<'info, MXEAccount>,
+    /// CHECK: computation_account, checked by arcium program.
+    pub computation_account: UncheckedAccount<'info>,
+    #[account(address = derive_cluster_pda!(mxe_account, ErrorCode::ClusterNotSet))]
+    pub cluster_account: Account<'info, Cluster>,
+    #[account(address = ::anchor_lang::solana_program::sysvar::instructions::ID)]
+    /// CHECK: instructions_sysvar
+    pub instructions_sysvar: AccountInfo<'info>,
+}
+
+#[init_computation_definition_accounts("match_order", payer)]
+#[derive(Accounts)]
+pub struct InitMatchOrderCompDef<'info> {
+    #[account(mut)]
+    pub payer: Signer<'info>,
+    #[account(mut, address = derive_mxe_pda!())]
+    pub mxe_account: Box<Account<'info, MXEAccount>>,
+    #[account(mut)]
+    /// CHECK: comp_def_account, checked by arcium program.
+    pub comp_def_account: UncheckedAccount<'info>,
+    #[account(mut, address = derive_mxe_lut_pda!(mxe_account.lut_offset_slot))]
+    /// CHECK: address_lookup_table, checked by arcium program.
+    pub address_lookup_table: UncheckedAccount<'info>,
+    #[account(address = LUT_PROGRAM_ID)]
+    /// CHECK: lut_program
+    pub lut_program: UncheckedAccount<'info>,
+    pub arcium_program: Program<'info, Arcium>,
     pub system_program: Program<'info, System>,
 }
 
-#[derive(Accounts)]
-#[instruction(pool_id: u64)]
-pub struct SubmitOrder<'info> {
-    #[account(mut, seeds = [b"pool", &pool_id.to_le_bytes()], bump)]
-    pub pool: Account<'info, TradingPool>,
-    #[account(init, payer = trader, space = Order::LEN,
-        seeds = [b"order", trader.key().as_ref(), &Clock::get().unwrap().unix_timestamp.to_le_bytes()],
-        bump)]
-    pub order: Account<'info, Order>,
-    #[account(mut)]
-    pub trader: Signer<'info>,
-    pub system_program: Program<'info, System>,
-}
-
-#[derive(Accounts)]
-pub struct SettleOrder<'info> {
-    #[account(mut)]
-    pub order: Account<'info, Order>,
-    #[account(mut, seeds = [b"pool", &order.pool_id.to_le_bytes()], bump)]
-    pub pool: Account<'info, TradingPool>,
-    pub authority: Signer<'info>,
-}
-
-#[account]
-pub struct TradingPool {
-    pub authority: Pubkey,
-    pub pool_id: u64,
-    pub base_mint: Pubkey,
-    pub quote_mint: Pubkey,
-    pub mxe_cluster_offset: u64,
-    pub active: bool,
-    pub total_orders: u64,
-    pub total_settlements: u64,
-}
-impl TradingPool {
-    pub const LEN: usize = 8 + 32 + 8 + 32 + 32 + 8 + 1 + 8 + 8;
-}
-
-#[account]
-pub struct Order {
-    pub trader: Pubkey,
-    pub pool_id: u64,
-    pub side: OrderSide,
-    pub encrypted_price: Vec<u8>,  // max 64 bytes
-    pub encrypted_size: Vec<u8>,   // max 64 bytes
-    pub order_commitment: [u8; 32],
-    pub status: OrderStatus,
-    pub submitted_at: i64,
-    pub fill_price_lamports: u64,
-    pub fill_size: u64,
-    pub mxe_proof_hash: [u8; 32],
-    pub settled_at: i64,
-}
-impl Order {
-    pub const LEN: usize = 8 + 32 + 8 + 1 + (4+64) + (4+64) + 32 + 1 + 8 + 8 + 8 + 32 + 8;
-}
-
-#[derive(AnchorSerialize, AnchorDeserialize, Clone, PartialEq, Eq)]
-pub enum OrderSide { Buy, Sell }
-
-#[derive(AnchorSerialize, AnchorDeserialize, Clone, PartialEq, Eq)]
-pub enum OrderStatus { Open, Filled, Cancelled }
-
 #[event]
-pub struct PoolInitialized { pub pool_id: u64, pub mxe_cluster_offset: u64 }
-#[event]
-pub struct OrderSubmitted { pub trader: Pubkey, pub pool_id: u64, pub order_commitment: [u8; 32] }
-#[event]
-pub struct OrderSettled { pub trader: Pubkey, pub pool_id: u64, pub fill_size: u64, pub mxe_proof_hash: [u8; 32] }
+pub struct OrderMatchedEvent {
+    pub result: [u8; 32],
+    pub nonce: [u8; 16],
+}
 
 #[error_code]
-pub enum ShadowPoolError {
-    #[msg("Pool is not active")]
-    PoolNotActive,
-    #[msg("Encrypted data too large")]
-    DataTooLarge,
+pub enum ErrorCode {
+    #[msg("Computation aborted")]
+    AbortedComputation,
+    #[msg("Cluster not set")]
+    ClusterNotSet,
 }
