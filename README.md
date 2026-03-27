@@ -1,5 +1,8 @@
 # ShadowPool (Solana + Arcium)
 
+**Program ID (devnet):** `9Pwn25dobepgerar43d2GgXuNmKFcYYEoJwMjULwakUG`
+[View on Explorer](https://explorer.solana.com/address/9Pwn25dobepgerar43d2GgXuNmKFcYYEoJwMjULwakUG?cluster=devnet)
+
 > ShadowPool explores how encrypted execution can enable private trading on public blockchains.
 
 ShadowPool is a confidential trading venue prototype built on Solana using Arcium encrypted compute.
