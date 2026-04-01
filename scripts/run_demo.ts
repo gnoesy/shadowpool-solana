@@ -1,100 +1,255 @@
 /**
  * shadowpool-solana demo
- * Simulates a confidential dark pool order match via Arcium MXE
- *
- * Flow:
- *   1. Trader submits encrypted bid price + size
- *   2. Counterparty submits encrypted ask price + size
- *   3. Arcium MXE matches orders without exposing either side
- *   4. Settlement amount written on-chain — individual prices never revealed
- *
- * Usage:
- *   ANCHOR_WALLET=~/.config/solana/devnet.json \
- *   npx ts-node --transpile-only scripts/run_demo.ts
+ * Confidential dark-pool style order matching via Arcium MXE.
  */
-import { Connection, Keypair, PublicKey } from "@solana/web3.js";
 import * as anchor from "@coral-xyz/anchor";
+import { Keypair, PublicKey } from "@solana/web3.js";
 import { randomBytes } from "crypto";
 import * as fs from "fs";
 import * as os from "os";
+import * as path from "path";
+import {
+  awaitComputationFinalization,
+  getArciumEnv,
+  getClockAccAddress,
+  getCompDefAccOffset,
+  getClusterAccAddress,
+  getCompDefAccAddress,
+  getComputationAccAddress,
+  getExecutingPoolAccAddress,
+  getFeePoolAccAddress,
+  getMXEAccAddress,
+  getMempoolAccAddress,
+  RescueCipher,
+  deserializeLE,
+  getMXEPublicKey,
+  x25519,
+} from "@arcium-hq/client";
 
-const PROGRAM_ID = "9Pwn25dobepgerar43d2GgXuNmKFcYYEoJwMjULwakUG";
-const RPC_URL = "https://api.devnet.solana.com";
+const PROGRAM_ID = new PublicKey("9Pwn25dobepgerar43d2GgXuNmKFcYYEoJwMjULwakUG");
+const SIGN_PDA_SEED = Buffer.from("ArciumSignerAccount");
+const EVIDENCE_LOG = path.join(__dirname, "../evidence/mxe_runs.jsonl");
 
 function log(event: string, data: Record<string, unknown> = {}) {
-  console.log(JSON.stringify({ event, ...data, ts: new Date().toISOString() }));
+  const line = JSON.stringify({ event, ...data, ts: new Date().toISOString() });
+  fs.mkdirSync(path.dirname(EVIDENCE_LOG), { recursive: true });
+  fs.appendFileSync(EVIDENCE_LOG, line + "\n");
+  console.log(line);
+}
+
+async function withRpcRetry<T>(fn: () => Promise<T>, retries = 8): Promise<T> {
+  let delayMs = 500;
+  for (let attempt = 1; ; attempt++) {
+    try {
+      return await fn();
+    } catch (error: any) {
+      const message = error?.message || String(error);
+      if (attempt >= retries || !message.includes("429")) {
+        throw error;
+      }
+      await new Promise((resolve) => setTimeout(resolve, delayMs));
+      delayMs *= 2;
+    }
+  }
+}
+
+async function confirmSignatureByPolling(
+  connection: anchor.web3.Connection,
+  signature: string,
+  lastValidBlockHeight: number,
+  commitment: anchor.web3.Commitment,
+): Promise<void> {
+  for (;;) {
+    const [{ value: statuses }, currentBlockHeight] = await Promise.all([
+      withRpcRetry(() => connection.getSignatureStatuses([signature])),
+      withRpcRetry(() => connection.getBlockHeight(commitment)),
+    ]);
+
+    const status = statuses[0];
+    if (status?.err) {
+      throw new Error(`Signature ${signature} failed: ${JSON.stringify(status.err)}`);
+    }
+    if (
+      status &&
+      (status.confirmationStatus === "confirmed" ||
+        status.confirmationStatus === "finalized")
+    ) {
+      return;
+    }
+    if (currentBlockHeight > lastValidBlockHeight) {
+      throw new Error(`Signature ${signature} has expired: block height exceeded.`);
+    }
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+  }
+}
+
+async function sendAndConfirmCompat(
+  provider: anchor.AnchorProvider,
+  tx: anchor.web3.Transaction,
+  signers: anchor.web3.Signer[] = [],
+  opts: anchor.web3.ConfirmOptions = {},
+): Promise<string> {
+  const commitment = opts.commitment || opts.preflightCommitment || "confirmed";
+  const latest = await withRpcRetry(() =>
+    provider.connection.getLatestBlockhash({ commitment }),
+  );
+
+  tx.feePayer ||= provider.publicKey;
+  tx.recentBlockhash ||= latest.blockhash;
+  tx.lastValidBlockHeight ||= latest.lastValidBlockHeight;
+
+  if (signers.length > 0) {
+    tx.partialSign(...signers);
+  }
+
+  const signed = await provider.wallet.signTransaction(tx);
+  const sig = await withRpcRetry(() =>
+    provider.connection.sendRawTransaction(signed.serialize(), {
+      skipPreflight: opts.skipPreflight,
+      preflightCommitment: opts.preflightCommitment || commitment,
+      maxRetries: opts.maxRetries,
+    }),
+  );
+
+  await withRpcRetry(() =>
+    confirmSignatureByPolling(
+      provider.connection,
+      sig,
+      tx.lastValidBlockHeight!,
+      commitment,
+    ),
+  );
+
+  return sig;
+}
+
+async function getMxePublicKeyWithRetry(
+  provider: anchor.AnchorProvider,
+  programId: PublicKey,
+  retries = 8,
+  delayMs = 1000,
+): Promise<Uint8Array> {
+  for (let attempt = 1; attempt <= retries; attempt++) {
+    const key = await getMXEPublicKey(provider, programId);
+    if (key) {
+      return key;
+    }
+    if (attempt < retries) {
+      await new Promise((resolve) => setTimeout(resolve, delayMs));
+    }
+  }
+  throw new Error(`MXE public key unavailable for program ${programId.toString()}`);
 }
 
 async function main() {
+  process.env.ARCIUM_CLUSTER_OFFSET = "456";
+
   const walletPath = process.env.ANCHOR_WALLET || `${os.homedir()}/.config/solana/devnet.json`;
-  const conn = new Connection(RPC_URL, "confirmed");
-  const owner = Keypair.fromSecretKey(
-    new Uint8Array(JSON.parse(fs.readFileSync(walletPath).toString()))
+  const conn = new anchor.web3.Connection(
+    process.env.ANCHOR_PROVIDER_URL || process.env.RPC_URL || "https://api.devnet.solana.com",
+    {
+      commitment: "confirmed",
+      wsEndpoint: process.env.WS_RPC_URL,
+    },
   );
+  const owner = Keypair.fromSecretKey(
+    new Uint8Array(JSON.parse(fs.readFileSync(walletPath).toString())),
+  );
+  const provider = new anchor.AnchorProvider(conn, new anchor.Wallet(owner), {
+    commitment: "confirmed",
+    skipPreflight: true,
+  });
+  provider.sendAndConfirm = (
+    tx: anchor.web3.Transaction,
+    signers?: anchor.web3.Signer[],
+    opts?: anchor.web3.ConfirmOptions,
+  ) => sendAndConfirmCompat(provider, tx, signers || [], opts || {});
+  anchor.setProvider(provider);
+
+  const idl = JSON.parse(fs.readFileSync(path.join(__dirname, "../target/idl/shadowpool.json"), "utf-8"));
+  const program = new anchor.Program(idl, provider) as anchor.Program<any>;
+  const arciumEnv = getArciumEnv();
+  const signPdaAccount = PublicKey.findProgramAddressSync([SIGN_PDA_SEED], PROGRAM_ID)[0];
 
   log("demo_start", {
-    description: "ShadowPool confidential dark pool match via Arcium MXE",
+    program: PROGRAM_ID.toString(),
     wallet: owner.publicKey.toString(),
-    program: PROGRAM_ID,
-    note: "Order prices and sizes encrypted before submission — only settlement result on-chain",
+    description: "Encrypted dark-pool order match via MXE",
   });
 
-  // Step 1: Simulate order book entries
-  const buyOrder = { price: 105, size: 10, side: "buy" };
-  const sellOrder = { price: 103, size: 10, side: "sell" };
+  const privateKey = x25519.utils.randomSecretKey();
+  const publicKey = x25519.getPublicKey(privateKey);
+  const mxePublicKey = await getMxePublicKeyWithRetry(provider, PROGRAM_ID);
 
+  const bid = BigInt(Math.floor(Math.random() * 200) + 100);
+  const ask = BigInt(Math.floor(Math.random() * 200) + 50);
   log("orders_prepared", {
-    buy_price: "encrypted (private to MXE)",
-    sell_price: "encrypted (private to MXE)",
-    note: "No price information visible to the public orderbook",
+    bid: "encrypted",
+    ask: "encrypted",
+    note: `Local sample prices prepared for private match (${bid.toString()}, ${ask.toString()})`,
   });
 
-  // Step 2: Check wallet balance
-  const balance = await conn.getBalance(owner.publicKey) / 1e9;
-  log("wallet_balance", { sol: balance, sufficient: balance > 0.01 });
+  const nonce = randomBytes(16);
+  const sharedSecret = x25519.getSharedSecret(privateKey, mxePublicKey);
+  const cipher = new RescueCipher(sharedSecret);
+  const ciphertext = cipher.encrypt([bid, ask], nonce);
 
-  if (balance < 0.01) {
-    log("demo_skip", { reason: "insufficient balance", action: "run: solana airdrop 2" });
-    return;
+  const computationOffset = new anchor.BN(randomBytes(8), "hex");
+  const clusterOffset = arciumEnv.arciumClusterOffset;
+
+  try {
+    const sig = await program.methods
+      .matchOrder(
+        computationOffset,
+        Array.from(ciphertext[0]),
+        Array.from(ciphertext[1]),
+        Array.from(publicKey),
+        new anchor.BN(deserializeLE(nonce).toString()),
+      )
+      .accountsPartial({
+        payer: owner.publicKey,
+        signPdaAccount,
+        mxeAccount: getMXEAccAddress(PROGRAM_ID),
+        mempoolAccount: getMempoolAccAddress(clusterOffset),
+        executingPool: getExecutingPoolAccAddress(clusterOffset),
+        computationAccount: getComputationAccAddress(clusterOffset, computationOffset),
+        compDefAccount: getCompDefAccAddress(
+          PROGRAM_ID,
+          Buffer.from(getCompDefAccOffset("match_order")).readUInt32LE(),
+        ),
+        clusterAccount: getClusterAccAddress(clusterOffset),
+        poolAccount: getFeePoolAccAddress(),
+        clockAccount: getClockAccAddress(),
+      })
+      .rpc({ skipPreflight: true, commitment: "confirmed" });
+
+    log("match_order_queued", {
+      sig,
+      explorer: `https://explorer.solana.com/tx/${sig}?cluster=devnet`,
+    });
+
+    const finalizeSig = await Promise.race([
+      awaitComputationFinalization(provider, computationOffset, PROGRAM_ID, "confirmed"),
+      new Promise<never>((_, reject) => setTimeout(() => reject(new Error("timeout")), 90_000)),
+    ]);
+
+    log("match_order_success", {
+      queueSig: sig,
+      finalizeSig,
+      clusterOffset,
+    });
+  } catch (e: any) {
+    log("match_order_fail", {
+      message: e.message || String(e),
+      logs: e.logs || [],
+      code: e.code,
+      raw: (() => { try { return JSON.stringify(e); } catch { return String(e); } })(),
+    });
+    process.exit(1);
   }
-
-  // Step 3: Verify program deployed on devnet
-  const programInfo = await conn.getAccountInfo(new PublicKey(PROGRAM_ID));
-  log("program_check", {
-    program: PROGRAM_ID,
-    active: programInfo !== null,
-    note: "shadowpool MXE program deployed and active on devnet",
-  });
-
-  // Step 4: Simulate encryption of order values
-  const encryptedBid = randomBytes(32);
-  const encryptedAsk = randomBytes(32);
-
-  log("encryption_simulated", {
-    algorithm: "x25519-RescueCipher",
-    encrypted_bid_length: encryptedBid.length,
-    encrypted_ask_length: encryptedAsk.length,
-    prices_on_chain: false,
-    note: "In production: import RescueCipher from @arcium-hq/client",
-  });
-
-  // Step 5: Simulate the MXE match
-  const matchResult = buyOrder.price >= sellOrder.price;
-  log("mxe_simulation", {
-    match_found: matchResult,
-    clearing_price: "encrypted — only MXE sees this",
-    on_chain_result: "settlement instruction emitted after MXE callback",
-  });
-
-  log("demo_complete", {
-    result: "Encrypted orders submitted. MXE match_order computation queued.",
-    circuit: "match_order.arcis",
-    cluster: "456 (devnet)",
-    program: `https://explorer.solana.com/address/${PROGRAM_ID}?cluster=devnet`,
-  });
 }
 
-main().catch(e => {
+main().catch((e) => {
   console.error(JSON.stringify({ event: "fatal", message: e.message }));
   process.exit(1);
 });
