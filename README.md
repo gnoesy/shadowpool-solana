@@ -58,6 +58,25 @@ Revealed:
 
 This allows trading without exposing intermediate signals.
 
+## What The App Does
+
+- Accepts encrypted trade intent on Solana devnet
+- Routes matching and balance checks through Arcium MXE
+- Reveals only the final settlement outcome onchain
+- Keeps order details, balance checks, and matching logic private during execution
+
+## What Stays Private
+
+- Individual order intent
+- Balance checks before execution
+- Trade size and match path
+
+## What Is Onchain
+
+- Encrypted order payloads
+- Program state needed for settlement
+- Final trade execution result
+
 ---
 
 ## Arcium Integration
@@ -116,3 +135,9 @@ It is not production-ready.
 ## Wallet
 
 `4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u`
+
+## Devnet Status
+
+- Network: Solana devnet
+- Arcium MXE cluster offset: 456
+- Current role: meaningful encrypted-compute pipeline with automated queue/finalize monitoring
