@@ -2857,3 +2857,287 @@
 {"event":"balance","sol":39.757971794,"ts":"2026-04-09T23:57:10.941Z"}
 {"event":"tx_sent","sig":"4rBoQcs43wwqPqcrv2EZ9gZsBuNWunKFMnzfmkQ1NRmqhXaSsNvyxdffsCkQ4pBfhEk3o4qCHiNRmrgj7P8aaG91","cluster":"devnet","ts":"2026-04-09T23:57:13.142Z"}
 {"event":"arcium_ping","active":true,"ts":"2026-04-09T23:57:13.233Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T00:27:13.399Z"}
+{"event":"balance","sol":39.749037666,"ts":"2026-04-10T00:27:13.711Z"}
+{"event":"tx_sent","sig":"2BpmdihaHFySk5Z6GtCd2Hmp93m7wvWqAkS8GADmRpy4ueADagMsLUMB3BCSoaVtc7DNmjQafJpGp3HgP99d3Rr","cluster":"devnet","ts":"2026-04-10T00:27:16.171Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T00:27:16.247Z"}
+{"event":"demo_start","program":"9Pwn25dobepgerar43d2GgXuNmKFcYYEoJwMjULwakUG","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","description":"Encrypted dark-pool order match via MXE","ts":"2026-04-10T00:38:55.071Z"}
+{"event":"orders_prepared","bid":"encrypted","ask":"encrypted","note":"Local sample prices prepared for private match (222, 187)","ts":"2026-04-10T00:38:55.651Z"}
+{"event":"match_order_queued","sig":"5em4F2R18CeEfquL2WL71jYYU3SNBZmAn9PSyVYgaNss9Wj2QBAjfc5ZxKsXuFq7Wc65mqgZJMivy12ZrDgeSVw","explorer":"https://explorer.solana.com/tx/5em4F2R18CeEfquL2WL71jYYU3SNBZmAn9PSyVYgaNss9Wj2QBAjfc5ZxKsXuFq7Wc65mqgZJMivy12ZrDgeSVw?cluster=devnet","ts":"2026-04-10T00:38:58.754Z"}
+{"event":"match_order_success","queueSig":"5em4F2R18CeEfquL2WL71jYYU3SNBZmAn9PSyVYgaNss9Wj2QBAjfc5ZxKsXuFq7Wc65mqgZJMivy12ZrDgeSVw","finalizeSig":"2TRV8t9yEhcAUWaeVMh9rPmbiVsX9a18zh9CEkEeVwKjRj3bP6StYjQY2zsQ5QAMY7vuk3qE5wovK5Jnrcgnm6Y5","clusterOffset":456,"ts":"2026-04-10T00:40:16.233Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T00:57:16.444Z"}
+{"event":"balance","sol":39.731308086,"ts":"2026-04-10T00:57:16.783Z"}
+{"event":"tx_sent","sig":"3KhtFW3oYaQH9piuRYDTQcKKJxiQHvqbw2snegBEyTQfoneRj3RCUys99XEeaSv9swUoTHG78XDorebGAbpQYJgc","cluster":"devnet","ts":"2026-04-10T00:57:19.199Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T00:57:19.290Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T01:27:19.518Z"}
+{"event":"balance","sol":39.709152361,"ts":"2026-04-10T01:27:19.947Z"}
+{"event":"tx_sent","sig":"5FXe7k15ptLVoTwyJfhhiVSeay8K8zhf8XgtkcxZpbXiMwfpxsEeHqTpg5VzxtB4WCBkkk3vXv3KCphz6tUCcNNJ","cluster":"devnet","ts":"2026-04-10T01:27:22.338Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T01:27:22.449Z"}
+{"event":"demo_start","program":"9Pwn25dobepgerar43d2GgXuNmKFcYYEoJwMjULwakUG","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","description":"Encrypted dark-pool order match via MXE","ts":"2026-04-10T01:40:29.724Z"}
+{"event":"orders_prepared","bid":"encrypted","ask":"encrypted","note":"Local sample prices prepared for private match (188, 185)","ts":"2026-04-10T01:40:30.559Z"}
+{"event":"match_order_queued","sig":"3m3CKgnFoSTHKbYgmqSNXT2bRi1rdSmKoUvvucEavQEX1TJCSQwZs29wirz61ywQFppE1waeEkKzKopPnfoHQVDB","explorer":"https://explorer.solana.com/tx/3m3CKgnFoSTHKbYgmqSNXT2bRi1rdSmKoUvvucEavQEX1TJCSQwZs29wirz61ywQFppE1waeEkKzKopPnfoHQVDB?cluster=devnet","ts":"2026-04-10T01:40:32.405Z"}
+{"event":"match_order_fail","message":"timeout","logs":[],"raw":"{}","ts":"2026-04-10T01:42:02.416Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T01:57:22.713Z"}
+{"event":"balance","sol":39.691430437,"ts":"2026-04-10T01:57:23.089Z"}
+{"event":"tx_sent","sig":"2kt4YqmikB4Xn9XkU5m6dCqHmFFNs4KxTvDG7PRMAkKbVp98d5tomDwJ8xq3mosa1wB49meSeBsT11TDt8dUyUcb","cluster":"devnet","ts":"2026-04-10T01:57:25.338Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T01:57:25.445Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T02:27:25.685Z"}
+{"event":"balance","sol":39.678069859,"ts":"2026-04-10T02:27:26.018Z"}
+{"event":"tx_sent","sig":"XpDUtpHtwYo7WUcPobfNuE4karAPmfqWsehsZFrsNnhquLJ9NnHtfSqePasbW5rJRtiiWt7VHgqPUW8WZneqUpc","cluster":"devnet","ts":"2026-04-10T02:27:28.355Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T02:27:28.448Z"}
+{"event":"demo_start","program":"9Pwn25dobepgerar43d2GgXuNmKFcYYEoJwMjULwakUG","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","description":"Encrypted dark-pool order match via MXE","ts":"2026-04-10T02:42:03.146Z"}
+{"event":"orders_prepared","bid":"encrypted","ask":"encrypted","note":"Local sample prices prepared for private match (164, 123)","ts":"2026-04-10T02:42:03.843Z"}
+{"event":"match_order_queued","sig":"2XRi9oBP52bXMsdakaeJj2iLWWAYxbPDFCWtMeSyPgRWa8yKUZUVJVAstNCUePzR7p85ukHeEjn2yv4NHRydttMQ","explorer":"https://explorer.solana.com/tx/2XRi9oBP52bXMsdakaeJj2iLWWAYxbPDFCWtMeSyPgRWa8yKUZUVJVAstNCUePzR7p85ukHeEjn2yv4NHRydttMQ?cluster=devnet","ts":"2026-04-10T02:42:07.437Z"}
+{"event":"match_order_fail","message":"timeout","logs":[],"raw":"{}","ts":"2026-04-10T02:43:37.448Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T02:57:28.541Z"}
+{"event":"balance","sol":39.651497989,"ts":"2026-04-10T02:57:28.819Z"}
+{"event":"tx_sent","sig":"3kuEpbBBYoPNuNjj6nh2Ec3oghCmmCvECgC8rUgTzmZvdcaBes4w1AryusJF9B8Mg44VTBaY1eKq8ts8C8mma9hm","cluster":"devnet","ts":"2026-04-10T02:57:31.048Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T02:57:31.127Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T03:27:31.416Z"}
+{"event":"balance","sol":39.638189554,"ts":"2026-04-10T03:27:31.750Z"}
+{"event":"tx_sent","sig":"HSd2YqWacYV7D9NSQTaHyLhCCBdDftbAdKH4EKSdkDvMzVtyhHqrQPkHtV6Q8D7FPs8edG8bgR1CZ9jgJkuT99c","cluster":"devnet","ts":"2026-04-10T03:27:33.995Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T03:27:34.087Z"}
+{"event":"demo_start","program":"9Pwn25dobepgerar43d2GgXuNmKFcYYEoJwMjULwakUG","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","description":"Encrypted dark-pool order match via MXE","ts":"2026-04-10T03:43:38.228Z"}
+{"event":"orders_prepared","bid":"encrypted","ask":"encrypted","note":"Local sample prices prepared for private match (173, 245)","ts":"2026-04-10T03:43:39.216Z"}
+{"event":"match_order_queued","sig":"5JXCNgrQtp5S7RNHruDRTZ3rSGTaWbfu9ySh9c4YJSJXCZPRYEQVYmH6mvJFhS8cKxJa72rqfKQ2EZSXKEw6xzTq","explorer":"https://explorer.solana.com/tx/5JXCNgrQtp5S7RNHruDRTZ3rSGTaWbfu9ySh9c4YJSJXCZPRYEQVYmH6mvJFhS8cKxJa72rqfKQ2EZSXKEw6xzTq?cluster=devnet","ts":"2026-04-10T03:43:41.534Z"}
+{"event":"match_order_fail","message":"timeout","logs":[],"raw":"{}","ts":"2026-04-10T03:45:11.547Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T03:57:34.341Z"}
+{"event":"balance","sol":39.620466166,"ts":"2026-04-10T03:57:34.708Z"}
+{"event":"tx_sent","sig":"5quHLWgcjFo4tJQ4iKSVhVvWGKPQJgau2ky9qddGNRFVmYDDMbtyfaBt3VoH1Kv1gZpsyLYp9MnfTCyBw5pY1nBc","cluster":"devnet","ts":"2026-04-10T03:57:37.009Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T03:57:37.101Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T04:27:37.439Z"}
+{"event":"balance","sol":39.598266733,"ts":"2026-04-10T04:27:37.787Z"}
+{"event":"tx_sent","sig":"5jhCbbdheoHtyoZhzpe2EZ4Sj6NYTxGJZ3moUW22dEFfJj1Z1TYzJxmyxHutsxtqkX7BrvKb3pXeRcdH2k7xMpNR","cluster":"devnet","ts":"2026-04-10T04:27:40.103Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T04:27:40.195Z"}
+{"event":"demo_start","program":"9Pwn25dobepgerar43d2GgXuNmKFcYYEoJwMjULwakUG","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","description":"Encrypted dark-pool order match via MXE","ts":"2026-04-10T04:45:12.189Z"}
+{"event":"orders_prepared","bid":"encrypted","ask":"encrypted","note":"Local sample prices prepared for private match (112, 119)","ts":"2026-04-10T04:45:12.861Z"}
+{"event":"match_order_queued","sig":"5xaFiB9ctam3dgsvNkBNoC2o9BZfVtnEtYs9y5Ci5LXM3H6DGBfbPdZVfuGGveRau6zwdLnq2Py7jMDXT5uPS2U4","explorer":"https://explorer.solana.com/tx/5xaFiB9ctam3dgsvNkBNoC2o9BZfVtnEtYs9y5Ci5LXM3H6DGBfbPdZVfuGGveRau6zwdLnq2Py7jMDXT5uPS2U4?cluster=devnet","ts":"2026-04-10T04:45:14.597Z"}
+{"event":"match_order_success","queueSig":"5xaFiB9ctam3dgsvNkBNoC2o9BZfVtnEtYs9y5Ci5LXM3H6DGBfbPdZVfuGGveRau6zwdLnq2Py7jMDXT5uPS2U4","finalizeSig":"3B86gGrSGV3HP6kTjHAwoDSoYm9NxqWMF2H5gnRM4n8FzxRnLe4b81NT82fHpHLPVRPfaH6qc4ySEnQPWrYUBt5","clusterOffset":456,"ts":"2026-04-10T04:45:38.165Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T04:57:40.466Z"}
+{"event":"balance","sol":39.580537153,"ts":"2026-04-10T04:57:40.849Z"}
+{"event":"tx_sent","sig":"4daP343RMsAKmjdvvJiopiJMFXY1Vcd4v3CjEMJcAyXXYrqo1Tn28tnUQvrs8xVYUmnGZNJrEex2NNHuFhKcxqKn","cluster":"devnet","ts":"2026-04-10T04:57:43.179Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T04:57:43.287Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T05:27:43.573Z"}
+{"event":"balance","sol":39.567228718,"ts":"2026-04-10T05:27:43.856Z"}
+{"event":"tx_sent","sig":"5r5dLHqYKNgmZwnfghqqfCKqmg4F8v6bbpVqYDAGsghWZiCe8Nj3ugbY7t2yejYEK1rAmMqLwLuBh5RQfEwRrNbt","cluster":"devnet","ts":"2026-04-10T05:27:46.019Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T05:27:46.095Z"}
+{"event":"demo_start","program":"9Pwn25dobepgerar43d2GgXuNmKFcYYEoJwMjULwakUG","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","description":"Encrypted dark-pool order match via MXE","ts":"2026-04-10T05:46:45.384Z"}
+{"event":"orders_prepared","bid":"encrypted","ask":"encrypted","note":"Local sample prices prepared for private match (264, 147)","ts":"2026-04-10T05:46:46.108Z"}
+{"event":"match_order_queued","sig":"3vEfArzN3XyWwxYz9jQAncpN6cFDnuF8ZWt7Tdj92eRomxSYc6QWSGbYdyjEChqp5NrG3ChSirsjg93okRhuHUcL","explorer":"https://explorer.solana.com/tx/3vEfArzN3XyWwxYz9jQAncpN6cFDnuF8ZWt7Tdj92eRomxSYc6QWSGbYdyjEChqp5NrG3ChSirsjg93okRhuHUcL?cluster=devnet","ts":"2026-04-10T05:46:48.344Z"}
+{"event":"match_order_success","queueSig":"3vEfArzN3XyWwxYz9jQAncpN6cFDnuF8ZWt7Tdj92eRomxSYc6QWSGbYdyjEChqp5NrG3ChSirsjg93okRhuHUcL","finalizeSig":"4JFbfPQwwc74scrKacL4h2LgXpFZVULfrkeyGSnsSA5avFZ2KPVQY9vVUVXaFXjuQdi1onQjJRq4nPRStFRus1m3","clusterOffset":456,"ts":"2026-04-10T05:47:10.907Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T05:57:46.383Z"}
+{"event":"balance","sol":39.540666554,"ts":"2026-04-10T05:57:46.779Z"}
+{"event":"tx_sent","sig":"CnfwVQT5DdUG3RomLHKXF9zehdZ5KXMP3DgxWaWMB1cYPfteb8XyGaRbsr8xiRHYKuknCnkvfPqJPDtz2sKdzUm","cluster":"devnet","ts":"2026-04-10T05:57:49.098Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T05:57:49.206Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T06:27:49.455Z"}
+{"event":"balance","sol":39.527309547,"ts":"2026-04-10T06:27:49.780Z"}
+{"event":"tx_sent","sig":"4UbhHp8kYYaLnjjdiiyZVbSWN8vTyhjWuQps6m6tXzXAUkPXPAvY6ZLP8U6Whczp8p3b8uCYgRyvnamQGrirRc9M","cluster":"devnet","ts":"2026-04-10T06:27:52.023Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T06:27:52.114Z"}
+{"event":"demo_start","program":"9Pwn25dobepgerar43d2GgXuNmKFcYYEoJwMjULwakUG","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","description":"Encrypted dark-pool order match via MXE","ts":"2026-04-10T06:48:19.102Z"}
+{"event":"orders_prepared","bid":"encrypted","ask":"encrypted","note":"Local sample prices prepared for private match (282, 102)","ts":"2026-04-10T06:48:20.144Z"}
+{"event":"match_order_queued","sig":"2umssZZipADeYY698GxKfduFbGmsQ8dHS5Tzd21G7MBjGoC1ShyRseAKJ3FFS2oU9maVZC5S1uxSBQshWu4ui9J6","explorer":"https://explorer.solana.com/tx/2umssZZipADeYY698GxKfduFbGmsQ8dHS5Tzd21G7MBjGoC1ShyRseAKJ3FFS2oU9maVZC5S1uxSBQshWu4ui9J6?cluster=devnet","ts":"2026-04-10T06:48:22.223Z"}
+{"event":"match_order_success","queueSig":"2umssZZipADeYY698GxKfduFbGmsQ8dHS5Tzd21G7MBjGoC1ShyRseAKJ3FFS2oU9maVZC5S1uxSBQshWu4ui9J6","finalizeSig":"25P2Ue3Dy2eCQ6r6ukhEBHhqs4fNHeC9YQqCygb4DBrtkLEFNWT3t3yXZVkAkXgwijLHZcjv9dB7EAf77h1tNbWs","clusterOffset":456,"ts":"2026-04-10T06:48:45.338Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T06:57:52.320Z"}
+{"event":"balance","sol":39.509579967,"ts":"2026-04-10T06:57:52.670Z"}
+{"event":"tx_sent","sig":"4k8ezREFU5emFDAAFb2QyUGbMtrF8sRd4Aycr1C6i1HkviuXkopzx6TG8Vjn6svyuQnEQDXSfL7uJMJ48q6p1wNZ","cluster":"devnet","ts":"2026-04-10T06:57:54.934Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T06:57:55.025Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T07:27:55.242Z"}
+{"event":"balance","sol":39.487424242,"ts":"2026-04-10T07:27:55.526Z"}
+{"event":"tx_sent","sig":"2bp4WrM1WjVPz3oPw4CCZ862WhLeGnHftBVS3QpcrwNCWDBHiG4TWxugCTd4Gk6Yr5ZUYPZSvfqrbBfRg5uQdvoW","cluster":"devnet","ts":"2026-04-10T07:27:57.663Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T07:27:57.738Z"}
+{"event":"demo_start","program":"9Pwn25dobepgerar43d2GgXuNmKFcYYEoJwMjULwakUG","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","description":"Encrypted dark-pool order match via MXE","ts":"2026-04-10T07:49:52.887Z"}
+{"event":"orders_prepared","bid":"encrypted","ask":"encrypted","note":"Local sample prices prepared for private match (166, 199)","ts":"2026-04-10T07:49:53.621Z"}
+{"event":"match_order_queued","sig":"2mPf8sqcnRY9RDtCzboSwBzxFC5f1PcJTuWWJ56KSshuvJKXqZP853zSRtvWZyAvpdTN4UhmMyktJHfh3biRpCoR","explorer":"https://explorer.solana.com/tx/2mPf8sqcnRY9RDtCzboSwBzxFC5f1PcJTuWWJ56KSshuvJKXqZP853zSRtvWZyAvpdTN4UhmMyktJHfh3biRpCoR?cluster=devnet","ts":"2026-04-10T07:49:57.535Z"}
+{"event":"match_order_success","queueSig":"2mPf8sqcnRY9RDtCzboSwBzxFC5f1PcJTuWWJ56KSshuvJKXqZP853zSRtvWZyAvpdTN4UhmMyktJHfh3biRpCoR","finalizeSig":"5LWSvBXY1Y5wdyqMqvHHcFi98wpyi16pQSwPxceVBkB864FdvuQx7VR2Xx8ZzSCtWiCFt5eRxmyAb2SrWBfR3rtA","clusterOffset":456,"ts":"2026-04-10T07:50:19.188Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T07:57:58.019Z"}
+{"event":"balance","sol":39.469708669,"ts":"2026-04-10T07:57:58.411Z"}
+{"event":"tx_sent","sig":"4T4GEjEfWk43CmhantYxnT8H7DyxBRonFH8BP7Se57Wq5WLuh1Utcj9QeN9SY9VoN9BcN3SfjZooi2mAcEUZdDcr","cluster":"devnet","ts":"2026-04-10T07:58:00.634Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T07:58:00.727Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T08:28:01.088Z"}
+{"event":"balance","sol":39.456359182,"ts":"2026-04-10T08:28:01.434Z"}
+{"event":"tx_sent","sig":"4b3hjrLqUCRcpNoB8BCTEMDRwei1bAdQLS9MSfzFJf1uJGRHhpymC8sMYNtJYnjjPLrZLcLGofksmEinNCXqLGuk","cluster":"devnet","ts":"2026-04-10T08:28:03.689Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T08:28:03.781Z"}
+{"event":"demo_start","program":"9Pwn25dobepgerar43d2GgXuNmKFcYYEoJwMjULwakUG","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","description":"Encrypted dark-pool order match via MXE","ts":"2026-04-10T08:51:28.259Z"}
+{"event":"orders_prepared","bid":"encrypted","ask":"encrypted","note":"Local sample prices prepared for private match (242, 169)","ts":"2026-04-10T08:51:28.998Z"}
+{"event":"match_order_queued","sig":"57D15pQQswVVJrvCpzc4RVVKuwaRHdHSjp1qCYCZHxmDquf3WaLtaCyFqD4amYBTFMzuM58rzNc7Z7wJm4FB7h6z","explorer":"https://explorer.solana.com/tx/57D15pQQswVVJrvCpzc4RVVKuwaRHdHSjp1qCYCZHxmDquf3WaLtaCyFqD4amYBTFMzuM58rzNc7Z7wJm4FB7h6z?cluster=devnet","ts":"2026-04-10T08:51:31.013Z"}
+{"event":"match_order_success","queueSig":"57D15pQQswVVJrvCpzc4RVVKuwaRHdHSjp1qCYCZHxmDquf3WaLtaCyFqD4amYBTFMzuM58rzNc7Z7wJm4FB7h6z","finalizeSig":"2NCBPnzh9R4SvmvkA7ufSLEuDzQCwAxYwfj1WPz855cKcgKfpkqWUcPqMCgN5fBwtsMR8QR9q1F3ksiAn65YCH9C","clusterOffset":456,"ts":"2026-04-10T08:51:54.436Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T08:58:04.091Z"}
+{"event":"balance","sol":39.429792312,"ts":"2026-04-10T08:58:04.458Z"}
+{"event":"tx_sent","sig":"4iGsiMEjbWSk7uoa6osbx8h2wANCZErF78hmNhHx6tKNJb715DviqieadcSNjmcpPMNhz3pSQjn9CwG2PhCwBoWk","cluster":"devnet","ts":"2026-04-10T08:58:06.604Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T08:58:06.680Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T09:28:06.828Z"}
+{"event":"balance","sol":39.416483877,"ts":"2026-04-10T09:28:07.168Z"}
+{"event":"tx_sent","sig":"3fK8Q8ddhQcyQCxWeAEC6RVp87i1DspoYhEt2L2KLWASQq7nEpdNvWnZL8r9LwisrsBHK3bSY3iRrWR8YSxKeLwU","cluster":"devnet","ts":"2026-04-10T09:28:09.403Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T09:28:09.495Z"}
+{"event":"demo_start","program":"9Pwn25dobepgerar43d2GgXuNmKFcYYEoJwMjULwakUG","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","description":"Encrypted dark-pool order match via MXE","ts":"2026-04-10T09:53:01.842Z"}
+{"event":"orders_prepared","bid":"encrypted","ask":"encrypted","note":"Local sample prices prepared for private match (107, 181)","ts":"2026-04-10T09:53:02.387Z"}
+{"event":"match_order_queued","sig":"5esG6fx5GsNgiofhATEMZJXHLmHy41WPu1mgkd18bBLa1yfNJ5fyvev76eqsfC71orT1QWBhoSbq4MtG9GcRdbLx","explorer":"https://explorer.solana.com/tx/5esG6fx5GsNgiofhATEMZJXHLmHy41WPu1mgkd18bBLa1yfNJ5fyvev76eqsfC71orT1QWBhoSbq4MtG9GcRdbLx?cluster=devnet","ts":"2026-04-10T09:53:05.454Z"}
+{"event":"match_order_success","queueSig":"5esG6fx5GsNgiofhATEMZJXHLmHy41WPu1mgkd18bBLa1yfNJ5fyvev76eqsfC71orT1QWBhoSbq4MtG9GcRdbLx","finalizeSig":"3J2GKs9eNHGWkmbhU3BtuuiRhU8PK4ZJmFiQmX8jbbuMBrtm9ezKFath9f2esJACbWhvmWySbCRSh7ybS8QpR9og","clusterOffset":456,"ts":"2026-04-10T09:53:26.448Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T09:58:09.714Z"}
+{"event":"balance","sol":39.398767186,"ts":"2026-04-10T09:58:10.165Z"}
+{"event":"tx_sent","sig":"5r3a3mrzviiN1ZxjfMQkoykRVbCSfuGp6b2jVv344zcxTC7tX6hJP3qfCTuVJYijMgfSKdmiF2iq8ffqmVzadDmG","cluster":"devnet","ts":"2026-04-10T09:58:12.489Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T09:58:12.597Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T10:28:12.840Z"}
+{"event":"balance","sol":39.376562607,"ts":"2026-04-10T10:28:13.229Z"}
+{"event":"tx_sent","sig":"4HquSEJTnNT1KGF6oZPvRQZAbJdQBFVmPFTftKUhMdHiAmx7a29ykmjFwYvgMA1t5VbecXyP6GcsfEfEHUoUK3fV","cluster":"devnet","ts":"2026-04-10T10:28:15.541Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T10:28:15.648Z"}
+{"event":"demo_start","program":"9Pwn25dobepgerar43d2GgXuNmKFcYYEoJwMjULwakUG","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","description":"Encrypted dark-pool order match via MXE","ts":"2026-04-10T10:54:36.187Z"}
+{"event":"orders_prepared","bid":"encrypted","ask":"encrypted","note":"Local sample prices prepared for private match (204, 164)","ts":"2026-04-10T10:54:36.755Z"}
+{"event":"match_order_queued","sig":"3BBnmRqN1Y2eKnaCTjWjJsJZ2NKSzsfyKNzgo2ecz3NSQXKFqkRDKJRfwbvFRA2y8B4Yty1d1JXvgWANYiyRs89t","explorer":"https://explorer.solana.com/tx/3BBnmRqN1Y2eKnaCTjWjJsJZ2NKSzsfyKNzgo2ecz3NSQXKFqkRDKJRfwbvFRA2y8B4Yty1d1JXvgWANYiyRs89t?cluster=devnet","ts":"2026-04-10T10:54:38.005Z"}
+{"event":"match_order_success","queueSig":"3BBnmRqN1Y2eKnaCTjWjJsJZ2NKSzsfyKNzgo2ecz3NSQXKFqkRDKJRfwbvFRA2y8B4Yty1d1JXvgWANYiyRs89t","finalizeSig":"5y9EB1DE1E6Mxjgyj9kVeKFoofgabtVSwxVswmoJr8ArR8HvTxbhT49HaAwhSVQGxcvZDbSfKUX39gzxNtGN49C7","clusterOffset":456,"ts":"2026-04-10T10:55:00.735Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T10:58:15.887Z"}
+{"event":"balance","sol":39.358828027,"ts":"2026-04-10T10:58:16.299Z"}
+{"event":"tx_sent","sig":"4KtuGKFxMhLhND5LNCjZS95fYkGWqBmTVgXRimvFW3uGBdtw5Gb5m2aEd3gPfJ7xXzzJScBEvKY9hcKjJ4BiHFC3","cluster":"devnet","ts":"2026-04-10T10:58:18.619Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T10:58:18.711Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T11:28:19.001Z"}
+{"event":"balance","sol":39.349945737,"ts":"2026-04-10T11:28:19.341Z"}
+{"event":"tx_sent","sig":"5gfVZmHcXVmt9eTC3DjkJg4b5CnR4kFsVMATsHgFrMspHNLLHacqaJJDRV6az5puqmhFbAyrBuHo1bKs6fkc4qHW","cluster":"devnet","ts":"2026-04-10T11:28:21.562Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T11:28:21.654Z"}
+{"event":"demo_start","program":"9Pwn25dobepgerar43d2GgXuNmKFcYYEoJwMjULwakUG","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","description":"Encrypted dark-pool order match via MXE","ts":"2026-04-10T11:56:08.750Z"}
+{"event":"orders_prepared","bid":"encrypted","ask":"encrypted","note":"Local sample prices prepared for private match (170, 81)","ts":"2026-04-10T11:56:09.346Z"}
+{"event":"match_order_queued","sig":"2ceM2y3x7MHzESPQMb3npk1eu5jt9Muk1ow1PNDV8AQrVPiX2NJ2J272h81EKDV57SFiSxodZ3GLXENM8jBtaxy9","explorer":"https://explorer.solana.com/tx/2ceM2y3x7MHzESPQMb3npk1eu5jt9Muk1ow1PNDV8AQrVPiX2NJ2J272h81EKDV57SFiSxodZ3GLXENM8jBtaxy9?cluster=devnet","ts":"2026-04-10T11:56:12.591Z"}
+{"event":"match_order_success","queueSig":"2ceM2y3x7MHzESPQMb3npk1eu5jt9Muk1ow1PNDV8AQrVPiX2NJ2J272h81EKDV57SFiSxodZ3GLXENM8jBtaxy9","finalizeSig":"43gd3YjkwsqhexRGZLMbSEFymGUGUvRJCEM3kwQDPfEGzee24Jos4v6RF9pAcQ4iDLFnVXyXMNg5gAcNNffuWkx6","clusterOffset":456,"ts":"2026-04-10T11:56:32.672Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T11:58:21.847Z"}
+{"event":"balance","sol":39.318964021,"ts":"2026-04-10T11:58:22.247Z"}
+{"event":"tx_sent","sig":"5qKut5ounPQdJU9ygYNRd1LyhtdVNTqDazk4nCJuhwaxcEeSbkY8qBJHXGpeWWwq8LMkjCLpMX7gbGo8H5exGtTF","cluster":"devnet","ts":"2026-04-10T11:58:24.469Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T11:58:24.563Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T12:28:25.030Z"}
+{"event":"balance","sol":39.310036889,"ts":"2026-04-10T12:28:25.367Z"}
+{"event":"tx_sent","sig":"2p1j1vyrN1CicZUNsmnhwrACXE7MuU18wNUfX5s6ayRFwhc1TCm4YYxc4TkKfg1XdBfCH8G72cxpf4S5W8v6Q37N","cluster":"devnet","ts":"2026-04-10T12:28:27.607Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T12:28:27.699Z"}
+{"event":"demo_start","program":"9Pwn25dobepgerar43d2GgXuNmKFcYYEoJwMjULwakUG","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","description":"Encrypted dark-pool order match via MXE","ts":"2026-04-10T12:57:43.518Z"}
+{"event":"orders_prepared","bid":"encrypted","ask":"encrypted","note":"Local sample prices prepared for private match (124, 204)","ts":"2026-04-10T12:57:44.117Z"}
+{"event":"match_order_queued","sig":"4rETG5J2mkT7hpwHcsi7Xe7yXNjMKBJeaydETWs692HtZqLc1RouPV9jEBoE2nFhhBXDUyYqfkgWcXAXVgjL6ydA","explorer":"https://explorer.solana.com/tx/4rETG5J2mkT7hpwHcsi7Xe7yXNjMKBJeaydETWs692HtZqLc1RouPV9jEBoE2nFhhBXDUyYqfkgWcXAXVgjL6ydA?cluster=devnet","ts":"2026-04-10T12:57:47.286Z"}
+{"event":"match_order_success","queueSig":"4rETG5J2mkT7hpwHcsi7Xe7yXNjMKBJeaydETWs692HtZqLc1RouPV9jEBoE2nFhhBXDUyYqfkgWcXAXVgjL6ydA","finalizeSig":"FLTopgcj1x1BJwGEmQoY7XMbL52CNiftB1cQtu2D6fadSo4K7wCpiHy9WncXeZ9fkaxs5VzUNrbnL2yY2pYPNez","clusterOffset":456,"ts":"2026-04-10T12:58:08.032Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T12:58:28.029Z"}
+{"event":"balance","sol":39.287891164,"ts":"2026-04-10T12:58:28.430Z"}
+{"event":"tx_sent","sig":"67Khk91tXAmWsD6MzuSxmxSUpDyoqT5rqUdrt6CRS2bi5zCZdS1GGkXhtEHbghHyFEQsSL9isvkURJaRBBzWAJB8","cluster":"devnet","ts":"2026-04-10T12:58:30.641Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T12:58:30.733Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T13:28:30.976Z"}
+{"event":"balance","sol":39.270166584,"ts":"2026-04-10T13:28:31.335Z"}
+{"event":"tx_sent","sig":"5g8DH5RkZEqF4cUgPnidbJYGn84dzpGkenno6AeeeAyHBDQTqxkkbsm4a8RHNtawNkj7q71RMTcnhe6NbgaY3vz9","cluster":"devnet","ts":"2026-04-10T13:28:33.564Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T13:28:33.655Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T13:58:33.863Z"}
+{"event":"balance","sol":39.256861104,"ts":"2026-04-10T13:58:34.266Z"}
+{"event":"tx_sent","sig":"2ZwmyUWwKkMME5dhRP64rhsLVuR4NJT1YSMJDQVW46gQEudBMTc5EzxBBFqcoVEoSF1ZPGdorLtzxdvteHkB73Se","cluster":"devnet","ts":"2026-04-10T13:58:36.569Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T13:58:36.662Z"}
+{"event":"demo_start","program":"9Pwn25dobepgerar43d2GgXuNmKFcYYEoJwMjULwakUG","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","description":"Encrypted dark-pool order match via MXE","ts":"2026-04-10T13:59:17.944Z"}
+{"event":"orders_prepared","bid":"encrypted","ask":"encrypted","note":"Local sample prices prepared for private match (298, 154)","ts":"2026-04-10T13:59:18.668Z"}
+{"event":"match_order_queued","sig":"3S5hmTq1SuqUCeCDhNMhse7vkvd7iuM8cw6kfTSRKEWXYgK79Qeq8mE3UU3HNbCdMkKjbqB3uvsAmD2MFFP8UiUz","explorer":"https://explorer.solana.com/tx/3S5hmTq1SuqUCeCDhNMhse7vkvd7iuM8cw6kfTSRKEWXYgK79Qeq8mE3UU3HNbCdMkKjbqB3uvsAmD2MFFP8UiUz?cluster=devnet","ts":"2026-04-10T13:59:22.240Z"}
+{"event":"match_order_success","queueSig":"3S5hmTq1SuqUCeCDhNMhse7vkvd7iuM8cw6kfTSRKEWXYgK79Qeq8mE3UU3HNbCdMkKjbqB3uvsAmD2MFFP8UiUz","finalizeSig":"SinLUxW5iv299gP3CBmtz1PqzMLgdMMrPR7S3wH91QM85sMcPdLunVJiZWicmKboDqcPgutVUdFJMF7tFswiWT3","clusterOffset":456,"ts":"2026-04-10T13:59:42.414Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T14:28:36.895Z"}
+{"event":"balance","sol":39.239087479,"ts":"2026-04-10T14:28:37.294Z"}
+{"event":"tx_sent","sig":"5kgHX1e6ndCBfr6yZja7mfU7knWtEfq4dK4aVei8zrAjiiNC4TEKNSnbJTiBxUF4JNdKFhZZPVvXK1t59n8Ppdew","cluster":"devnet","ts":"2026-04-10T14:28:39.593Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T14:28:39.701Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T14:58:40.049Z"}
+{"event":"balance","sol":39.221367899,"ts":"2026-04-10T14:58:40.384Z"}
+{"event":"tx_sent","sig":"4xv66xcxtVM95EaNhW1PbALCMXGJg7t9mkXPyofAeZHvsPggmZ7V7p7nxzQsZ3qbwzrtzQo2FtQ1wzzjqDWiXnwN","cluster":"devnet","ts":"2026-04-10T14:58:42.353Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T14:58:42.445Z"}
+{"event":"demo_start","program":"9Pwn25dobepgerar43d2GgXuNmKFcYYEoJwMjULwakUG","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","description":"Encrypted dark-pool order match via MXE","ts":"2026-04-10T15:00:52.997Z"}
+{"event":"orders_prepared","bid":"encrypted","ask":"encrypted","note":"Local sample prices prepared for private match (288, 117)","ts":"2026-04-10T15:00:53.587Z"}
+{"event":"match_order_queued","sig":"5owNVjDuX6n1deyH6yozXGsJR64wwRq72FQKH4of3Ut3htbm2rRVQ1TpnVVDtKLobkoFLiyNQ4msZzjVEsnRoPhP","explorer":"https://explorer.solana.com/tx/5owNVjDuX6n1deyH6yozXGsJR64wwRq72FQKH4of3Ut3htbm2rRVQ1TpnVVDtKLobkoFLiyNQ4msZzjVEsnRoPhP?cluster=devnet","ts":"2026-04-10T15:00:57.138Z"}
+{"event":"match_order_success","queueSig":"5owNVjDuX6n1deyH6yozXGsJR64wwRq72FQKH4of3Ut3htbm2rRVQ1TpnVVDtKLobkoFLiyNQ4msZzjVEsnRoPhP","finalizeSig":"3aiPSdosQtCTauhVvzFexsi1qucC2Rt9CutUnhErfnB73kEyhbvixnRWW9RBT9ijybDGMqzrcvXMAmV4bfhU5DC3","clusterOffset":456,"ts":"2026-04-10T15:01:18.577Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T15:28:42.849Z"}
+{"event":"balance","sol":39.199222174,"ts":"2026-04-10T15:28:43.150Z"}
+{"event":"tx_sent","sig":"wTup75HV6Qad1VNRnmymMVatLJD2Ca3fLyfmz7fYdEZU8EiCNah7w8BcFw5cbEKc3zDhRrysp3BRUnV3JdLsWdA","cluster":"devnet","ts":"2026-04-10T15:28:45.335Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T15:28:45.411Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T15:58:45.754Z"}
+{"event":"balance","sol":39.190350315,"ts":"2026-04-10T15:58:46.111Z"}
+{"event":"tx_sent","sig":"2uFEtjZm9fTb71RDaRkrLwWDLMQQiDhPjwNmBSnLd2eZwpnpA8jyHtTNYeMnRqPaRXfSvjnFhHhyuExyEqDr1o7d","cluster":"devnet","ts":"2026-04-10T15:58:48.229Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T15:58:48.306Z"}
+{"event":"demo_start","program":"9Pwn25dobepgerar43d2GgXuNmKFcYYEoJwMjULwakUG","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","description":"Encrypted dark-pool order match via MXE","ts":"2026-04-10T16:02:27.792Z"}
+{"event":"orders_prepared","bid":"encrypted","ask":"encrypted","note":"Local sample prices prepared for private match (256, 102)","ts":"2026-04-10T16:02:28.324Z"}
+{"event":"match_order_queued","sig":"3NgpdTtLUAhpq4Ap2g5hpuZtMAHg6PhZhQrNSuGQeFyvLieNxxzRty1NspHD8j5bSZ8wcLuKrvdMugsBnKW38r92","explorer":"https://explorer.solana.com/tx/3NgpdTtLUAhpq4Ap2g5hpuZtMAHg6PhZhQrNSuGQeFyvLieNxxzRty1NspHD8j5bSZ8wcLuKrvdMugsBnKW38r92?cluster=devnet","ts":"2026-04-10T16:02:31.423Z"}
+{"event":"match_order_success","queueSig":"3NgpdTtLUAhpq4Ap2g5hpuZtMAHg6PhZhQrNSuGQeFyvLieNxxzRty1NspHD8j5bSZ8wcLuKrvdMugsBnKW38r92","finalizeSig":"2JWYbXRvZWWjWLyMawEJaWcDPDutETja1UsvBo99BVVmjyKCmiNajCeTEbvBUxPxVLUNuo51QXsTUFG6FFRn6UPc","clusterOffset":456,"ts":"2026-04-10T16:02:52.653Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T16:28:48.674Z"}
+{"event":"balance","sol":39.159319445,"ts":"2026-04-10T16:28:49.087Z"}
+{"event":"tx_sent","sig":"5ohCycqD9bTCZPQJSXoBM6uU7ySb9iyGppGuH7WbYkKiFKYJzJifydBoiaRvnp4VTgDym9FEpCA6jFeordA83KRv","cluster":"devnet","ts":"2026-04-10T16:28:51.327Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T16:28:51.418Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T16:58:51.644Z"}
+{"event":"balance","sol":39.150437155,"ts":"2026-04-10T16:58:52.001Z"}
+{"event":"tx_sent","sig":"5XcPKsAtFJZHRQKjgdEusGcnSzwnUn5Nk4BkpkxgmhdPBUnF2kqe3HGEuUgMRSPjUdLvt8rsakNs4VJZLn6D4Wfz","cluster":"devnet","ts":"2026-04-10T16:58:54.240Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T16:58:54.331Z"}
+{"event":"demo_start","program":"9Pwn25dobepgerar43d2GgXuNmKFcYYEoJwMjULwakUG","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","description":"Encrypted dark-pool order match via MXE","ts":"2026-04-10T17:04:02.081Z"}
+{"event":"orders_prepared","bid":"encrypted","ask":"encrypted","note":"Local sample prices prepared for private match (172, 135)","ts":"2026-04-10T17:04:02.669Z"}
+{"event":"match_order_queued","sig":"4MN5g1TTzzqL6bTYZvaMJZy9v6nw2LZWruZnfK8AAoqT6jGKbWKaAkaECJK6x5P5tbX3dfxo1YHurc5mYtS99VsY","explorer":"https://explorer.solana.com/tx/4MN5g1TTzzqL6bTYZvaMJZy9v6nw2LZWruZnfK8AAoqT6jGKbWKaAkaECJK6x5P5tbX3dfxo1YHurc5mYtS99VsY?cluster=devnet","ts":"2026-04-10T17:04:05.766Z"}
+{"event":"match_order_success","queueSig":"4MN5g1TTzzqL6bTYZvaMJZy9v6nw2LZWruZnfK8AAoqT6jGKbWKaAkaECJK6x5P5tbX3dfxo1YHurc5mYtS99VsY","finalizeSig":"3SfMoan4GVro1mPPFhSsJk4dRdfPaCnFfgq9iFXtZ8FsHaxSdGJXuQErpBfp4SgfHyzPoUMr3iHRYbeKXgxyqoZx","clusterOffset":456,"ts":"2026-04-10T17:04:27.293Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T17:28:54.540Z"}
+{"event":"balance","sol":39.12829643,"ts":"2026-04-10T17:28:54.933Z"}
+{"event":"tx_sent","sig":"5VhkzcN2kNYbfni3EjtspzHmJGALXcho6Hi1psAdHNCDq25rpPdyb8W3K7sMqjDCeXonK7fTDgwqREqaHqbYFXBp","cluster":"devnet","ts":"2026-04-10T17:28:57.226Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T17:28:57.334Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T17:58:57.652Z"}
+{"event":"balance","sol":39.110577418,"ts":"2026-04-10T17:58:57.989Z"}
+{"event":"tx_sent","sig":"5vRLGmVbGZ6TA6iJTwDvrvEpBG7R8fjsqWs7FaEc9j7gd9gKXt1z2CFbeAqbYwSp5kje15K5Lnavu6GZ6z5tk19F","cluster":"devnet","ts":"2026-04-10T17:59:00.161Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T17:59:00.238Z"}
+{"event":"demo_start","program":"9Pwn25dobepgerar43d2GgXuNmKFcYYEoJwMjULwakUG","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","description":"Encrypted dark-pool order match via MXE","ts":"2026-04-10T18:05:36.550Z"}
+{"event":"orders_prepared","bid":"encrypted","ask":"encrypted","note":"Local sample prices prepared for private match (192, 110)","ts":"2026-04-10T18:05:37.123Z"}
+{"event":"match_order_queued","sig":"42aDDJiMjp5ZPNMuN623DcUR9yh9QFsH8DhN3ps9gfWXrcTt6hLjZkceJxXsiFu1caivTC59DAk7oEU8M9cfvo12","explorer":"https://explorer.solana.com/tx/42aDDJiMjp5ZPNMuN623DcUR9yh9QFsH8DhN3ps9gfWXrcTt6hLjZkceJxXsiFu1caivTC59DAk7oEU8M9cfvo12?cluster=devnet","ts":"2026-04-10T18:05:40.290Z"}
+{"event":"match_order_success","queueSig":"42aDDJiMjp5ZPNMuN623DcUR9yh9QFsH8DhN3ps9gfWXrcTt6hLjZkceJxXsiFu1caivTC59DAk7oEU8M9cfvo12","finalizeSig":"5eNmF1yAHMQNQRu9h8oX8NtuvkkXkffVf7it1iwoeJfstN3i3VDVJ15bNoU8ZPFuo8Z4cRAgBdZo2GSsMZ3VL9JH","clusterOffset":456,"ts":"2026-04-10T18:06:05.060Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T18:29:00.606Z"}
+{"event":"balance","sol":39.088384321,"ts":"2026-04-10T18:29:00.979Z"}
+{"event":"tx_sent","sig":"3R1Jev8bbpNr2ifqyFzaDKdzQWhRFV9kNP7ZtoPCc2xQJZgZT9tJwsKBYBgzHBLDjPQQwS2dcNojb6fkvrfomEqS","cluster":"devnet","ts":"2026-04-10T18:29:03.086Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T18:29:03.162Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T18:59:03.327Z"}
+{"event":"balance","sol":39.079507031,"ts":"2026-04-10T18:59:03.668Z"}
+{"event":"tx_sent","sig":"fVj8H6KT9JMqv8wFrWLeYain6yhMTS2HvX8EwdnXPvBLdFKkrKnAWEPqbZgMtjSzjZkuuCMWUrmnmcmNXSqhszu","cluster":"devnet","ts":"2026-04-10T18:59:05.826Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T18:59:05.902Z"}
+{"event":"demo_start","program":"9Pwn25dobepgerar43d2GgXuNmKFcYYEoJwMjULwakUG","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","description":"Encrypted dark-pool order match via MXE","ts":"2026-04-10T19:07:10.927Z"}
+{"event":"orders_prepared","bid":"encrypted","ask":"encrypted","note":"Local sample prices prepared for private match (187, 95)","ts":"2026-04-10T19:07:11.557Z"}
+{"event":"match_order_queued","sig":"49HJMGAunzhSpJYBNmcangNTTAqPi8zi7U7uBx8MxCLt4zmBNmZCrQ2fCCLxQTToyT5jLi7axk6hgep625oDffbA","explorer":"https://explorer.solana.com/tx/49HJMGAunzhSpJYBNmcangNTTAqPi8zi7U7uBx8MxCLt4zmBNmZCrQ2fCCLxQTToyT5jLi7axk6hgep625oDffbA?cluster=devnet","ts":"2026-04-10T19:07:14.821Z"}
+{"event":"match_order_success","queueSig":"49HJMGAunzhSpJYBNmcangNTTAqPi8zi7U7uBx8MxCLt4zmBNmZCrQ2fCCLxQTToyT5jLi7axk6hgep625oDffbA","finalizeSig":"5h1BjVCHs7XVrHbpU3qz3rvTYbmqmwoojje5BJgUbVie5uVb8fbs5duAp5MZrx94V5tPH81MpExnJB6LcSd9UPP4","clusterOffset":456,"ts":"2026-04-10T19:07:38.924Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T19:29:06.241Z"}
+{"event":"balance","sol":39.048519016,"ts":"2026-04-10T19:29:06.684Z"}
+{"event":"tx_sent","sig":"2oZdgC4ffRck49Yi5DpcUq7C9DefHdwH83xVyWhisL1anEZMxv345rxTkCNTfSX11KB1VFLqd2hRPk9JVSkRjVDq","cluster":"devnet","ts":"2026-04-10T19:29:08.978Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T19:29:09.086Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T19:59:09.379Z"}
+{"event":"balance","sol":39.039642484,"ts":"2026-04-10T19:59:09.725Z"}
+{"event":"tx_sent","sig":"JNwQkmgZQ6BFvqn3we4qpVAD2QTAiDjnaWCL3UqPzqUewcUtQFjQxja5HfneAAAJaS6rhBNymNxxMBT27x6h8vK","cluster":"devnet","ts":"2026-04-10T19:59:11.943Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T19:59:12.035Z"}
+{"event":"demo_start","program":"9Pwn25dobepgerar43d2GgXuNmKFcYYEoJwMjULwakUG","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","description":"Encrypted dark-pool order match via MXE","ts":"2026-04-10T20:08:45.462Z"}
+{"event":"orders_prepared","bid":"encrypted","ask":"encrypted","note":"Local sample prices prepared for private match (140, 147)","ts":"2026-04-10T20:08:46.003Z"}
+{"event":"match_order_queued","sig":"2sPvDTZZ8RaPwEPMM6nKMWuT7cxsGqFMVrswVAbPaPcGNSXrhzCxQN5Mj78tUhjafVrAfLgA2yQ5EfKYEnGPZbHX","explorer":"https://explorer.solana.com/tx/2sPvDTZZ8RaPwEPMM6nKMWuT7cxsGqFMVrswVAbPaPcGNSXrhzCxQN5Mj78tUhjafVrAfLgA2yQ5EfKYEnGPZbHX?cluster=devnet","ts":"2026-04-10T20:08:49.508Z"}
+{"event":"match_order_success","queueSig":"2sPvDTZZ8RaPwEPMM6nKMWuT7cxsGqFMVrswVAbPaPcGNSXrhzCxQN5Mj78tUhjafVrAfLgA2yQ5EfKYEnGPZbHX","finalizeSig":"2FrrSe3z7YjqPa6iLx4qgL6CQCkr4MHa86vRFNN4Lvk6bGfkrb2DkLpyynqQEpkvqWbhwjNFbpk65TBU8oS6Udu1","clusterOffset":456,"ts":"2026-04-10T20:09:10.268Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T20:29:12.218Z"}
+{"event":"balance","sol":39.017455561,"ts":"2026-04-10T20:29:12.587Z"}
+{"event":"tx_sent","sig":"4ZvV6FxLUZarX2LzhH5dfJn2zDn9yBr6MHcYhU8MFPtp3f62XR5MHmWzsaeLgkXhyiX9N42k2RCcAeG3iLD5bwTy","cluster":"devnet","ts":"2026-04-10T20:29:14.722Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T20:29:14.799Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T20:59:15.161Z"}
+{"event":"balance","sol":38.999730981,"ts":"2026-04-10T20:59:15.519Z"}
+{"event":"tx_sent","sig":"4oMyuom4T3FShok3whB4J1eRqET9SibAqGx2dCSZBD5fAQCiB14VuEJ2t1wVtv2vwWdBYwfVtSNyhaaGc2kMg1Tk","cluster":"devnet","ts":"2026-04-10T20:59:17.702Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T20:59:17.793Z"}
+{"event":"demo_start","program":"9Pwn25dobepgerar43d2GgXuNmKFcYYEoJwMjULwakUG","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","description":"Encrypted dark-pool order match via MXE","ts":"2026-04-10T21:10:20.093Z"}
+{"event":"orders_prepared","bid":"encrypted","ask":"encrypted","note":"Local sample prices prepared for private match (256, 219)","ts":"2026-04-10T21:10:20.646Z"}
+{"event":"match_order_queued","sig":"39zfJn2nKwFVibKfuJvE62q4Vaa9kRt3crrSzFXqSgwNXnVmnqa1bZDrULGsMKSb3LM1LevJudpPeL9mZd1eek54","explorer":"https://explorer.solana.com/tx/39zfJn2nKwFVibKfuJvE62q4Vaa9kRt3crrSzFXqSgwNXnVmnqa1bZDrULGsMKSb3LM1LevJudpPeL9mZd1eek54?cluster=devnet","ts":"2026-04-10T21:10:23.769Z"}
+{"event":"match_order_success","queueSig":"39zfJn2nKwFVibKfuJvE62q4Vaa9kRt3crrSzFXqSgwNXnVmnqa1bZDrULGsMKSb3LM1LevJudpPeL9mZd1eek54","finalizeSig":"EUTdJEcbkANu2zXDd1UpxPr5oNNfoP3cJZTM7toxhBzRdtZdvi8U2hc6LWEM3ZmzczWmrj8Si1L4DcM314TcY3z","clusterOffset":456,"ts":"2026-04-10T21:10:45.536Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T21:29:17.998Z"}
+{"event":"balance","sol":38.977585256,"ts":"2026-04-10T21:29:18.389Z"}
+{"event":"tx_sent","sig":"23NdoYbGL1nT5p9pKrGmqFEK7PVp53Qt7WJT9HtPuZEBFwFmaS8MFdmpZfgFYtDusYDxNhyWDBUwRZzwMnzDmMSC","cluster":"devnet","ts":"2026-04-10T21:29:20.567Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T21:29:20.659Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T21:59:20.965Z"}
+{"event":"balance","sol":38.968710237,"ts":"2026-04-10T21:59:21.276Z"}
+{"event":"tx_sent","sig":"2FmhrTY8ZfDNCGnAxAo6SgmgfGkv2jbNWw89QDa5BvyBZghHjeYKskgqBNjMSMgfwHfVHJPhnFuMg1DP72RBDVBE","cluster":"devnet","ts":"2026-04-10T21:59:23.463Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T21:59:23.538Z"}
+{"event":"demo_start","program":"9Pwn25dobepgerar43d2GgXuNmKFcYYEoJwMjULwakUG","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","description":"Encrypted dark-pool order match via MXE","ts":"2026-04-10T22:11:54.466Z"}
+{"event":"orders_prepared","bid":"encrypted","ask":"encrypted","note":"Local sample prices prepared for private match (248, 78)","ts":"2026-04-10T22:11:55.055Z"}
+{"event":"match_order_queued","sig":"4APTZEoZK7iFuPL2C1XVzQ9c2HibLvuLM4zAU31Ubn6Fvux32mvwpKYU2q8HFVbhvt8CFLHDSUkVyynHfhCpEHJJ","explorer":"https://explorer.solana.com/tx/4APTZEoZK7iFuPL2C1XVzQ9c2HibLvuLM4zAU31Ubn6Fvux32mvwpKYU2q8HFVbhvt8CFLHDSUkVyynHfhCpEHJJ?cluster=devnet","ts":"2026-04-10T22:11:58.162Z"}
+{"event":"match_order_fail","message":"failed to get signatures for address: Failed to query long-term storage; please try again","logs":[],"code":-32019,"raw":"{\"code\":-32019,\"name\":\"SolanaJSONRPCError\"}","ts":"2026-04-10T22:12:20.683Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T22:29:23.844Z"}
+{"event":"balance","sol":38.937676781,"ts":"2026-04-10T22:29:24.242Z"}
+{"event":"tx_sent","sig":"35w93ux6K5xBxREK7sTDXbju6gVJTSm1X6qTbY3FYL6QYTKAJvsuC1GGBP63mo9VC35vpeK1nrP4mVRBsX4AtJWh","cluster":"devnet","ts":"2026-04-10T22:29:26.516Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T22:29:26.608Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T22:59:26.982Z"}
+{"event":"balance","sol":38.928789491,"ts":"2026-04-10T22:59:27.337Z"}
+{"event":"tx_sent","sig":"3ob5Rqa69VTmE6UXeCRLaHWHT4H35Dx7zhBx1RUGPk3fVAiKMc6DZ1TAKsp9WtqbzFSeC2DgZei8ZVq7sA5JFUw4","cluster":"devnet","ts":"2026-04-10T22:59:29.561Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T22:59:29.653Z"}
+{"event":"demo_start","program":"9Pwn25dobepgerar43d2GgXuNmKFcYYEoJwMjULwakUG","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","description":"Encrypted dark-pool order match via MXE","ts":"2026-04-10T23:12:21.213Z"}
+{"event":"orders_prepared","bid":"encrypted","ask":"encrypted","note":"Local sample prices prepared for private match (298, 245)","ts":"2026-04-10T23:12:21.822Z"}
+{"event":"match_order_queued","sig":"8J8Fhnu8xuBQW7YNEN1VrZWseu9GfgmE1KiWbzDwKSnRo8hxDp9LeDi7UEgkZAr8YRJ2FAp2z3LxUHdCp83ywkr","explorer":"https://explorer.solana.com/tx/8J8Fhnu8xuBQW7YNEN1VrZWseu9GfgmE1KiWbzDwKSnRo8hxDp9LeDi7UEgkZAr8YRJ2FAp2z3LxUHdCp83ywkr?cluster=devnet","ts":"2026-04-10T23:12:25.123Z"}
+{"event":"match_order_success","queueSig":"8J8Fhnu8xuBQW7YNEN1VrZWseu9GfgmE1KiWbzDwKSnRo8hxDp9LeDi7UEgkZAr8YRJ2FAp2z3LxUHdCp83ywkr","finalizeSig":"3kGhZK2k4DZmwigLyaBqa9RCuEbmGuoeDDKrryHbQ2bbeksKSWYP3ccQoTM18hxKxQ6dhfEwHY6Q4yNwVXDfUWUw","clusterOffset":456,"ts":"2026-04-10T23:12:44.917Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T23:29:29.895Z"}
+{"event":"balance","sol":38.906633766,"ts":"2026-04-10T23:29:30.221Z"}
+{"event":"tx_sent","sig":"56ikmaPHAXQi6w19iv9WuXp2CBgUmRKjrpUbLzaGqtPJfUNrWCmdbAwQ5ZoWcbRj4VQv9x8MeAJCydtKzbPbmyiV","cluster":"devnet","ts":"2026-04-10T23:29:32.365Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T23:29:32.444Z"}
+{"event":"start","wallet":"4Y8R73V9QpmL2oUtS4LrwdZk3LrPRCLp7KGg2npPkB1u","ts":"2026-04-10T23:59:33.091Z"}
+{"event":"balance","sol":43.888915649,"ts":"2026-04-10T23:59:33.527Z"}
+{"event":"tx_sent","sig":"5eoSgJqXXcGsX9QR5G4Zxkmrqefb7897BDSdNPApymMypzL75GbmKfB6jxz7EtBZsGzac5oBn9TzcCFSFddBF5rH","cluster":"devnet","ts":"2026-04-10T23:59:35.760Z"}
+{"event":"arcium_ping","active":true,"ts":"2026-04-10T23:59:35.855Z"}
